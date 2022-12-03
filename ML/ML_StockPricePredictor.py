@@ -1,4 +1,8 @@
 import numpy as np
+import random
+from keras.models import Sequential
+from keras.layers import Activation, Dense
+from keras.optimizers import Adam
 
 # Define the reinforcement learning agent
 class Agent:
