@@ -1,0 +1,7 @@
+import pandas_datareader as pdr
+
+# Get the stock data for AAPL
+stock_data = pdr.DataReader("AAPL", data_source="google")
+
+# Save the historical prices to a CSV file
+stock_data.to_csv("aapl.csv", date_format="%Y-%m-%d")
