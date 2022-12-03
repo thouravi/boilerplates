@@ -3,6 +3,8 @@ import yfinance as yf
 # Get the stock data for AAPL
 stock_data = yf.Ticker("AAPL")
 
-# Print the historical prices
+# Get the historical prices
 hist = stock_data.history(period="max")
-print(hist)
+
+# Save the historical prices to a CSV file
+hist.to_csv("aapl.csv", date_format="%Y-%m-%d")
