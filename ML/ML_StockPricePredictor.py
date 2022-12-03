@@ -49,6 +49,13 @@ class Agent:
       self.model.fit(state, target_f, epochs=1, verbose=0)
     if self.epsilon > self.epsilon_min:
       self.epsilon *= self.epsilon_decay
+  
+  def reward(self, state, action, reward, next_state, done):
+    # Compute the reward for a given transition
+    target = reward
+    if not done:
+      target = reward + self.gamma * np.amax(self.model.predict(next_state)[0])
+    return target
 
   def load(self, name):
     self.model.load_weights(name)
