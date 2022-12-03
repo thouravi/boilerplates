@@ -1,0 +1,8 @@
+import yfinance as yf
+
+# Get the stock data for AAPL
+stock_data = yf.Ticker("AAPL")
+
+# Print the historical prices
+hist = stock_data.history(period="max")
+print(hist)
